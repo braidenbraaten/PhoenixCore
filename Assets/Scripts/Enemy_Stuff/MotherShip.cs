@@ -12,8 +12,16 @@ public class MotherShip : MonoBehaviour
     #region RoundStuff
     public int m_numOfWaves { private get; set; }
     public int m_currentWave { get; private set; }
+    //ships left till round ends
     public int m_shipsLeftToDestroy { get; private set; }
+    // num of ships to deploy at beginning of round
+    public int m_shipsToDeploy; 
+    //num of ship tracker (may throw this out if i can just use left to destroy)
+    public int m_currNumOfShips { get; private set; }
 
+    //percent of ship type for the round
+    private float bomberPercent, fighterPercent, captainPercent;
+    private int bomberSpawnAmt, fighterSpawnAmt, captainSpawnAmt;
     #endregion
 
 
@@ -92,7 +100,11 @@ public class MotherShip : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        bomberPercent = 100f; fighterPercent = 0f; captainPercent = 0f;
+
         m_numOfWaves = GM.numberOfWaves;
+        // should automatically go up to wave one at start
+        m_currentWave = 0;
 
         bomberBay = new List<GameObject>(b_stats.spawnCount);
         fighterBay = new List<GameObject>(f_stats.spawnCount);
@@ -107,9 +119,9 @@ public class MotherShip : MonoBehaviour
 
         //this should change to round based system
 
-        SpawnShips(HANGAR_TYPE.BOMBER, b_stats.spawnCount, b_stats.radius);
-        SpawnShips(HANGAR_TYPE.FIGHTER, f_stats.spawnCount, f_stats.radius);
-        SpawnShips(HANGAR_TYPE.CAPTAIN, c_stats.spawnCount, c_stats.radius);
+        //SpawnShips(HANGAR_TYPE.BOMBER, b_stats.spawnCount, b_stats.radius);
+        //SpawnShips(HANGAR_TYPE.FIGHTER, f_stats.spawnCount, f_stats.radius);
+        //SpawnShips(HANGAR_TYPE.CAPTAIN, c_stats.spawnCount, c_stats.radius);
        
     }
 
@@ -123,8 +135,53 @@ public class MotherShip : MonoBehaviour
 
         prevDefcon = defcon;
 
+
+        if (m_shipsLeftToDestroy <= 0)
+        {
+            GM.endOfWave = true;
+        }
+
+        if (GM.endOfWave)
+        {
+            
+            bomberSpawnAmt = (int)((m_shipsToDeploy / 100.0f) * bomberPercent);
+            fighterSpawnAmt = (int)((m_shipsToDeploy / 100.0f) * fighterPercent);
+            captainSpawnAmt = (int)((m_shipsToDeploy / 100.0f) * captainPercent);
+
+            GM.EndOfWaveTimer -= Time.deltaTime;
+
+            if(GM.EndOfWaveTimer <= 0)
+            {
+
+                GM.EndOfWaveTimer = GM.ResetWaveTimer;
+                GM.endOfWave = false;
+                nextWave(m_currentWave, m_numOfWaves);
+
+            }
+        }
+
+
+    }
+
+    void nextWave(int currWave, int numOfWaves)
+    {
+        m_shipsLeftToDestroy = m_shipsToDeploy;
+
         
 
+        if (currWave < numOfWaves)
+        {
+            currWave += 1;
+        }
+        else
+        {
+            GM.finalWave = true;
+        }
+
+
+        SpawnShips(HANGAR_TYPE.BOMBER, bomberSpawnAmt, b_stats.radius);
+        SpawnShips(HANGAR_TYPE.FIGHTER, fighterSpawnAmt, f_stats.radius);
+        SpawnShips(HANGAR_TYPE.CAPTAIN, captainSpawnAmt, c_stats.radius);
 
     }
 
@@ -148,18 +205,23 @@ public class MotherShip : MonoBehaviour
         switch (defcon)
         {
             case DEFCON.FIVE:
+                print("DEFCON 5");
                 m_defconReactions[4].Invoke();
                 break;
             case DEFCON.FOUR:
+                print("DEFCON 4");
                 m_defconReactions[3].Invoke();
                 break;
             case DEFCON.THREE:
+                print("DEFCON 3");
                 m_defconReactions[2].Invoke();
                 break;
             case DEFCON.TWO:
+                print("DEFCON 2");
                 m_defconReactions[1].Invoke();
                 break;
             case DEFCON.ONE:
+                print("DEFCON 1");
                 m_defconReactions[0].Invoke();
                 break;
             default:
@@ -180,7 +242,9 @@ public class MotherShip : MonoBehaviour
     #region ONE
     void defcon_one()
     {
-
+        captainPercent = 100; fighterPercent = 0; bomberPercent = 0;
+        //100% = capatain 
+        
     }
 
     #endregion
@@ -189,21 +253,24 @@ public class MotherShip : MonoBehaviour
 
     void defcon_two()
     {
-
+        captainPercent = 80; fighterPercent = 20; bomberPercent = 0;
+        //80% captain 20% Fighter
     }
     #endregion
 
     #region THREE
     void defcon_three()
     {
-
+        captainPercent = 30; fighterPercent = 60; bomberPercent = 10;
+        // 30% captain 60% Fighter 10% bomber
     }
     #endregion
 
     #region FOUR
     void defcon_four()
     {
-
+        captainPercent = 0; fighterPercent = 40; bomberPercent = 60;
+        // 60% bomber 40% Fighter
     }
     #endregion
 
@@ -212,6 +279,9 @@ public class MotherShip : MonoBehaviour
     //least threatened level
     void defcon_five()
     {
+        captainPercent = 0; fighterPercent = 0; bomberPercent = 100;
+        // 100% bombers
+
         //used to change the pattern that the ships are currently
         //set to.
         foreach (GameObject g in deployedShips)
@@ -260,19 +330,19 @@ public class MotherShip : MonoBehaviour
 
     void build_bomber(int i, float l_angle, float l_radius)
     {
-        GameObject go = Instantiate(b_stats.prefab, b_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, Quaternion.identity);
+        GameObject go = Instantiate(b_stats.prefab, b_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
         go.name = "Bomber_" + i;
         go.tag = b_stats.Tag;
         Rigidbody r =  go.AddComponent<Rigidbody>();
         BoxCollider b = go.AddComponent<BoxCollider>();
         DiveBomber db = go.AddComponent<DiveBomber>();
 
-
+        //set the target of the enemy to the player
         db.target = GM.p_1;
 
         r.drag = b_stats.resistance;
         //      CHANGE THE NEGATIVE SIGN WHEN THEY FIX THE DIRECTION OF THE SHIP
-        r.AddForce(new Vector3(0,0, b_stats.impulseForceSpeed * i), b_stats.forceType);
+       // r.AddForce(new Vector3(0,0, b_stats.impulseForceSpeed * i), b_stats.forceType);
         r.isKinematic = false;
         r.useGravity = false;
         //b.size.Set()
@@ -282,7 +352,7 @@ public class MotherShip : MonoBehaviour
 
     void build_fighter(int i, float l_angle, float l_radius)
     {
-        GameObject go = Instantiate(f_stats.prefab, f_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, Quaternion.identity);
+        GameObject go = Instantiate(f_stats.prefab, f_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
         go.name = "Fighter_" + i;
         Rigidbody r = go.AddComponent<Rigidbody>();
         BoxCollider b = go.AddComponent<BoxCollider>();
@@ -293,7 +363,7 @@ public class MotherShip : MonoBehaviour
 
     void build_captain(int i, float l_angle, float l_radius)
     {
-        GameObject go = Instantiate(c_stats.prefab, c_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, Quaternion.identity);
+        GameObject go = Instantiate(c_stats.prefab, c_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
         go.name = "Captain_" + i;
         Rigidbody r = go.AddComponent<Rigidbody>();
         BoxCollider b = go.AddComponent<BoxCollider>();

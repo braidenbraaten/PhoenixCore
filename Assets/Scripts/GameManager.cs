@@ -28,6 +28,15 @@ public class GameManager : MonoBehaviour {
 
     [HideInInspector]
     public int numberOfWaves;
+    public int currentWave;
+    //this being true should bump the wave from 0 to 1 automatically
+    public bool endOfWave = true;
+    public bool beginningOfWave;
+    public bool finalWave;
+
+    //the wait time before the next round begins
+    public float EndOfWaveTimer;
+    public float ResetWaveTimer;
 
     [Header("Score Settings")]
     public int game_Score;
@@ -37,6 +46,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        ResetWaveTimer = EndOfWaveTimer;
         DetermineWaveCount();
 
         won.AddListener(hasWon);
