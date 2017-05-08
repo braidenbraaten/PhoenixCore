@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoenixCore", "PhoenixCore.csproj", "{D541A292-C93E-2B8A-07EB-F5C3A46890AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoenixCore.Editor", "PhoenixCore.Editor.csproj", "{A79AEC94-6B8D-C0B5-BB09-87F27B3AD0B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D541A292-C93E-2B8A-07EB-F5C3A46890AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D541A292-C93E-2B8A-07EB-F5C3A46890AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D541A292-C93E-2B8A-07EB-F5C3A46890AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D541A292-C93E-2B8A-07EB-F5C3A46890AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A79AEC94-6B8D-C0B5-BB09-87F27B3AD0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A79AEC94-6B8D-C0B5-BB09-87F27B3AD0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A79AEC94-6B8D-C0B5-BB09-87F27B3AD0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A79AEC94-6B8D-C0B5-BB09-87F27B3AD0B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
