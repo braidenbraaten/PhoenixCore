@@ -39,6 +39,8 @@ public class Weapons : MonoBehaviour {
         public GameObject bulletSpawnPos;
         public GameObject bullet;
         public BULLET_TYPE bullet_type;
+        [HideInInspector]
+        public BULLET_TYPE prevBulletType;
         public ParticleSystem particle;
         [HideInInspector]
         public ParticleSystem.MainModule pm;
@@ -88,6 +90,8 @@ public class Weapons : MonoBehaviour {
         singleTimer = singleDelay;
 
         #region Left Cannon
+        
+        
         //left.joint.anchor = 
         left.Fire.AddListener(leftCannonFired);
         left.pm = left.particle.main;
@@ -181,50 +185,57 @@ public class Weapons : MonoBehaviour {
 
         #region Bullet Types
 
-        
-        switch (left.bullet_type)
-        {
-            case BULLET_TYPE.KINETIC:
-                left.bullet = kineticPrefab;
-                //left.particle = gunFireParticles;
-                break;
-            case BULLET_TYPE.LASER:
-                left.bullet = laserPrefab;
-                //left.particle = gunFireParticles;
-                break;
-            case BULLET_TYPE.ROCKET:
-                left.bullet = rocketPrefab;
-                //left.particle = gunFireParticles;
-                break;
-            case
-                BULLET_TYPE.HELLFIRE:
-                left.bullet = hellfirePrefab;
-                break;
-            default:
-                break;
-        }
 
-        switch (right.bullet_type)
-        {
-            case BULLET_TYPE.KINETIC:
-                right.bullet = kineticPrefab;
-                //right.particle = gunFireParticles;
-                break;
-            case BULLET_TYPE.LASER:
-                right.bullet = laserPrefab;
-                //right.particle = gunFireParticles;
-                break;
-            case BULLET_TYPE.ROCKET:
-                right.bullet = rocketPrefab;
-                //right.particle = gunFireParticles;
-                break;
-            case BULLET_TYPE.HELLFIRE:
-                right.bullet = hellfirePrefab;
-                break;
-            default:
-                break;
-        }
+        
+            switch (left.bullet_type)
+            {
+                case BULLET_TYPE.KINETIC:
+                    left.bullet = kineticPrefab;
+                    //left.particle = gunFireParticles;
+                    break;
+                case BULLET_TYPE.LASER:
+                    left.bullet = laserPrefab;
+                    //left.particle = gunFireParticles;
+                    break;
+                case BULLET_TYPE.ROCKET:
+                    left.bullet = rocketPrefab;
+                    //left.particle = gunFireParticles;
+                    break;
+                case
+                    BULLET_TYPE.HELLFIRE:
+                    left.bullet = hellfirePrefab;
+                    break;
+                default:
+                    break;
+            }
+        
+
+        
+            switch (right.bullet_type)
+            {
+                case BULLET_TYPE.KINETIC:
+                    right.bullet = kineticPrefab;
+                    //right.particle = gunFireParticles;
+                    break;
+                case BULLET_TYPE.LASER:
+                    right.bullet = laserPrefab;
+                    //right.particle = gunFireParticles;
+                    break;
+                case BULLET_TYPE.ROCKET:
+                    right.bullet = rocketPrefab;
+                    //right.particle = gunFireParticles;
+                    break;
+                case BULLET_TYPE.HELLFIRE:
+                    right.bullet = hellfirePrefab;
+                    break;
+                default:
+                    break;
+            }
+        
         #endregion
+        //always make sure that these are being set after the switch statements
+        //left.prevBulletType = left.bullet_type;
+        //right.prevBulletType = right.bullet_type;
     }
 
     public void KineticBulletFired(bool leftCannon)
@@ -237,8 +248,10 @@ public class Weapons : MonoBehaviour {
         #endregion
 
         local_bullet.transform.Rotate(90, 0, 0);
+        local_bullet.tag = "Bullet";
+        
         r = local_bullet.GetComponent<Rigidbody>();
-
+       
 
         if (leftCannon)
         {

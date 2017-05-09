@@ -17,18 +17,53 @@ public class BaseEnemy : MonoBehaviour {
     public int m_damageOutput;
     //energy value, the value they are worth captured
     public int energyValue;
-	// Use this for initialization
-	
+    
+
+    //Light Information
+    public Light flashingLight;
+    public Animator animator;
+    [HideInInspector]
+    public FlashAtPlayer flashingLightScript;
+    [HideInInspector]
+    public bool hasCrashed = false;
+    [HideInInspector]
+    public bool shotDown = false;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        flashingLightScript = animator.GetBehaviour<FlashAtPlayer>();
+        
+        
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	  void Update () {
         m_position = this.transform.position;
+
+
+
+
 	}
+
+
 
 
     public void setPosition(Vector3 inputVec)
     {
         m_position = inputVec;
+    }
+
+
+
+    public virtual void Death()
+    {
+        //Destroy(this, 2f);
+        //Destroy(this, );
     }
 
   

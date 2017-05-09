@@ -13,11 +13,11 @@ public class MotherShip : MonoBehaviour
     public int m_numOfWaves { private get; set; }
     public int m_currentWave { get; private set; }
     //ships left till round ends
-    public int m_shipsLeftToDestroy { get; private set; }
+    public int m_shipsLeftToDestroy { get;  set; }
     // num of ships to deploy at beginning of round
     public int m_shipsToDeploy; 
     //num of ship tracker (may throw this out if i can just use left to destroy)
-    public int m_currNumOfShips { get; private set; }
+    //public int m_currNumOfShips { get; private set; }
 
     //percent of ship type for the round
     private float bomberPercent, fighterPercent, captainPercent;
@@ -130,6 +130,8 @@ public class MotherShip : MonoBehaviour
     
     void Update()
     {
+
+        Debug.Log("Left to kill Counter:" + m_shipsLeftToDestroy);
         if (prevDefcon != defcon)
             checkDefconLevel();
 
@@ -333,18 +335,18 @@ public class MotherShip : MonoBehaviour
         GameObject go = Instantiate(b_stats.prefab, b_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
         go.name = "Bomber_" + i;
         go.tag = b_stats.Tag;
-        Rigidbody r =  go.AddComponent<Rigidbody>();
-        BoxCollider b = go.AddComponent<BoxCollider>();
-        DiveBomber db = go.AddComponent<DiveBomber>();
+        //Rigidbody r =  go.AddComponent<Rigidbody>();
+        //BoxCollider b = go.AddComponent<BoxCollider>();
+        //DiveBomber db = go.AddComponent<DiveBomber>();
 
         //set the target of the enemy to the player
-        db.target = GM.p_1;
+        //db.target = GM.p_1;
 
-        r.drag = b_stats.resistance;
+       // r.drag = b_stats.resistance;
         //      CHANGE THE NEGATIVE SIGN WHEN THEY FIX THE DIRECTION OF THE SHIP
        // r.AddForce(new Vector3(0,0, b_stats.impulseForceSpeed * i), b_stats.forceType);
-        r.isKinematic = false;
-        r.useGravity = false;
+        //r.isKinematic = false;
+        //.useGravity = false;
         //b.size.Set()
 
         bomberBay.Add(go);
@@ -354,10 +356,10 @@ public class MotherShip : MonoBehaviour
     {
         GameObject go = Instantiate(f_stats.prefab, f_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
         go.name = "Fighter_" + i;
-        Rigidbody r = go.AddComponent<Rigidbody>();
-        BoxCollider b = go.AddComponent<BoxCollider>();
-        r.isKinematic = false;
-        r.useGravity = false;
+        //Rigidbody r = go.AddComponent<Rigidbody>();
+        //BoxCollider b = go.AddComponent<BoxCollider>();
+        //r.isKinematic = false;
+        //r.useGravity = false;
         fighterBay.Add(go);
     }
 
@@ -365,10 +367,10 @@ public class MotherShip : MonoBehaviour
     {
         GameObject go = Instantiate(c_stats.prefab, c_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
         go.name = "Captain_" + i;
-        Rigidbody r = go.AddComponent<Rigidbody>();
-        BoxCollider b = go.AddComponent<BoxCollider>();
-        r.isKinematic = false;
-        r.useGravity = false;
+        //Rigidbody r = go.AddComponent<Rigidbody>();
+        //BoxCollider b = go.AddComponent<BoxCollider>();
+        //r.isKinematic = false;
+        //r.useGravity = false;
         captainBay.Add(go);
     }
 

@@ -10,6 +10,8 @@ TagManager:
   - Bomber
   - Fighter
   - Captain
+  - Bullet
+  - Building
   layers:
   - Default
   - TransparentFX
