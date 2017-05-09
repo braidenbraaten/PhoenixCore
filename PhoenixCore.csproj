@@ -78,9 +78,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\FlashAtPlayer.cs" />
     <Compile Include="Assets\Scripts\Enemy_Stuff\AI_Stuff\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy_Stuff\BaseEnemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy_Stuff\CaptainPlane.cs" />
     <Compile Include="Assets\Scripts\Enemy_Stuff\DiveBomber.cs" />
+    <Compile Include="Assets\Scripts\Enemy_Stuff\FighterPlane.cs" />
     <Compile Include="Assets\Scripts\Enemy_Stuff\MotherShip.cs" />
     <Compile Include="Assets\Scripts\Enemy_Stuff\RoundSystem.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -89,6 +92,7 @@
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Weapons.cs" />
+    <Compile Include="Assets\SearchForPlayer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />

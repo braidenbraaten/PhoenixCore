@@ -30,4 +30,8 @@ public class BaseEnemy : MonoBehaviour {
     {
         m_position = inputVec;
     }
+
+  
+
+    
 }
