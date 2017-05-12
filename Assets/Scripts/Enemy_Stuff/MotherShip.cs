@@ -38,6 +38,7 @@ public class MotherShip : MonoBehaviour
         public GameObject spawnPos;
         public int spawnCount;
         public string Tag;
+        public int scoreValue;
         [Space]
         public float moveSpeed;
         public float radius;
@@ -90,7 +91,7 @@ public class MotherShip : MonoBehaviour
     public List<GameObject> fighterBay;
     public List<GameObject> captainBay;
     // so the build function knows which type of ship it is building
-    private enum HANGAR_TYPE { BOMBER, FIGHTER, CAPTAIN }
+    public enum HANGAR_TYPE { BOMBER, FIGHTER, CAPTAIN }
 
     [Header("Deployed Ships")]
     public List<GameObject> deployedShips = new List<GameObject>();
@@ -100,6 +101,7 @@ public class MotherShip : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        
         bomberPercent = 100f; fighterPercent = 0f; captainPercent = 0f;
 
         m_numOfWaves = GM.numberOfWaves;
@@ -233,8 +235,20 @@ public class MotherShip : MonoBehaviour
 
 
     //this will be used to launch the ships 
-    public void launchShips(DEFCON defConLevel, List<GameObject> hangerbay)
+    public void launchShips(DEFCON defConLevel, HANGAR_TYPE hangarType)
     {
+        //
+        switch (hangarType)
+        {
+            case HANGAR_TYPE.BOMBER:
+                break;
+            case HANGAR_TYPE.FIGHTER:
+                break;
+            case HANGAR_TYPE.CAPTAIN:
+                break;
+            default:
+                break;
+        }
 
     }
 
@@ -335,6 +349,8 @@ public class MotherShip : MonoBehaviour
         GameObject go = Instantiate(b_stats.prefab, b_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
         go.name = "Bomber_" + i;
         go.tag = b_stats.Tag;
+        go.layer = 9;
+        
         //Rigidbody r =  go.AddComponent<Rigidbody>();
         //BoxCollider b = go.AddComponent<BoxCollider>();
         //DiveBomber db = go.AddComponent<DiveBomber>();
@@ -350,28 +366,35 @@ public class MotherShip : MonoBehaviour
         //b.size.Set()
 
         bomberBay.Add(go);
+        deployedShips.Add(go);
     }
 
     void build_fighter(int i, float l_angle, float l_radius)
     {
         GameObject go = Instantiate(f_stats.prefab, f_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
         go.name = "Fighter_" + i;
+        go.layer = 9;
+        go.tag = f_stats.Tag;
         //Rigidbody r = go.AddComponent<Rigidbody>();
         //BoxCollider b = go.AddComponent<BoxCollider>();
         //r.isKinematic = false;
         //r.useGravity = false;
         fighterBay.Add(go);
+        deployedShips.Add(go);
     }
 
     void build_captain(int i, float l_angle, float l_radius)
     {
         GameObject go = Instantiate(c_stats.prefab, c_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
         go.name = "Captain_" + i;
+        go.layer = 9;
+        go.tag = c_stats.Tag;
         //Rigidbody r = go.AddComponent<Rigidbody>();
         //BoxCollider b = go.AddComponent<BoxCollider>();
         //r.isKinematic = false;
         //r.useGravity = false;
         captainBay.Add(go);
+        deployedShips.Add(go);
     }
 
 

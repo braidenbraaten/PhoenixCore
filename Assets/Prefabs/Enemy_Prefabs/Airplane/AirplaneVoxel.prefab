@@ -252,7 +252,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 1.5
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 1
@@ -365,6 +365,15 @@ MonoBehaviour:
   flashingLight: {fileID: 0}
   animator: {fileID: 0}
   flashingLightScript: {fileID: 0}
+  hasCrashed: 0
+  shotDown: 0
+  turn: 0
+  addedForce: {x: 0, y: 0, z: 0}
+  airplaneVoxel: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  up: {fileID: 0}
+  down: {fileID: 0}
 --- !u!198 &198334106956727514
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -3347,7 +3356,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7f08f06256ab27b4cb9eb0b41831a69f, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: f2d37238fea5a8c4a86c80912b379030, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

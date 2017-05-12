@@ -273,14 +273,20 @@ public class Weapons : MonoBehaviour {
 
         #region bullet Instantiation
 
-        if (leftCannon) { local_bullet = Instantiate(left.bullet, left.bulletSpawnPos.transform.position, Quaternion.identity); }
+        if (leftCannon) { local_bullet = Instantiate(left.bullet, left.bulletSpawnPos.transform.position, Quaternion.identity);
+            local_bullet.transform.Rotate(left.Cannon.transform.eulerAngles + new Vector3(0,0,0));
+        }
+
+
         else { local_bullet = Instantiate(right.bullet, right.bulletSpawnPos.transform.position, Quaternion.identity); }
 
         #endregion
 
-        local_bullet.transform.Rotate(90, 0, 0);
+        //local_bullet.transform.Rotate(40,0,0);
+
         r = local_bullet.GetComponent<Rigidbody>();
 
+        Destroy(local_bullet, BulletDestroyTime * 4f);
         //return local_bullet;
     }
 

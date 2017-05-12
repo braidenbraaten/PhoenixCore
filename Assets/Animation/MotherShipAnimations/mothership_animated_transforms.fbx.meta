@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: db79abd897973bc4f8dd48feddf03af0
+timeCreated: 1494550389
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bay_door_L
+    100002: bay_door_L1
+    100004: bay_door_L1 1
+    100006: bay_door_L2
+    100008: bay_door_L2 1
+    100010: bay_door_L3
+    100012: bay_door_L3 1
+    100014: bay_door_R
+    100016: bay_doors
+    100018: bottom_detail
+    100020: bottom_surface_detail1
+    100022: bottom_surface_detail2
+    100024: bottom_surface_detail3
+    100026: bottom_surface_detail4
+    100028: bottom_surface_detail5
+    100030: bottom_surface_detail6
+    100032: bottom_surface_detail7
+    100034: bottom_surface_detail8
+    100036: energy_core
+    100038: //RootNode
+    100040: ship_body
+    400000: bay_door_L
+    400002: bay_door_L1
+    400004: bay_door_L1 1
+    400006: bay_door_L2
+    400008: bay_door_L2 1
+    400010: bay_door_L3
+    400012: bay_door_L3 1
+    400014: bay_door_R
+    400016: bay_doors
+    400018: bottom_detail
+    400020: bottom_surface_detail1
+    400022: bottom_surface_detail2
+    400024: bottom_surface_detail3
+    400026: bottom_surface_detail4
+    400028: bottom_surface_detail5
+    400030: bottom_surface_detail6
+    400032: bottom_surface_detail7
+    400034: bottom_surface_detail8
+    400036: energy_core
+    400038: //RootNode
+    400040: ship_body
+    2300000: bay_door_L1
+    2300002: bay_door_L1 1
+    2300004: bay_door_L2
+    2300006: bay_door_L2 1
+    2300008: bay_door_L3
+    2300010: bay_door_L3 1
+    2300012: bottom_surface_detail1
+    2300014: bottom_surface_detail2
+    2300016: bottom_surface_detail3
+    2300018: bottom_surface_detail4
+    2300020: bottom_surface_detail5
+    2300022: bottom_surface_detail6
+    2300024: bottom_surface_detail7
+    2300026: bottom_surface_detail8
+    2300028: energy_core
+    2300030: ship_body
+    3300000: bay_door_L1
+    3300002: bay_door_L1 1
+    3300004: bay_door_L2
+    3300006: bay_door_L2 1
+    3300008: bay_door_L3
+    3300010: bay_door_L3 1
+    3300012: bottom_surface_detail1
+    3300014: bottom_surface_detail2
+    3300016: bottom_surface_detail3
+    3300018: bottom_surface_detail4
+    3300020: bottom_surface_detail5
+    3300022: bottom_surface_detail6
+    3300024: bottom_surface_detail7
+    3300026: bottom_surface_detail8
+    3300028: energy_core
+    3300030: ship_body
+    4300000: ship_body
+    4300002: energy_core
+    4300004: bottom_surface_detail1
+    4300006: bottom_surface_detail8
+    4300008: bottom_surface_detail2
+    4300010: bottom_surface_detail3
+    4300012: bottom_surface_detail4
+    4300014: bottom_surface_detail5
+    4300016: bottom_surface_detail6
+    4300018: bottom_surface_detail7
+    4300020: bay_door_L1
+    4300022: bay_door_L2
+    4300024: bay_door_L3
+    4300026: bay_door_L1
+    4300028: bay_door_L2
+    4300030: bay_door_L3
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

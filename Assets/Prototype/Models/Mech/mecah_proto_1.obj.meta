@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 618dd3f546f5de24bb4e73642789e368
+timeCreated: 1494538914
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: arm:arm1_arm:polySurface2_arm_r_arm_l
+    100002: cockpit:cockpit_cockpit:cockpit_seat_polySurface2
+    100004: cockpit:cockpit_cockpit:intercom_com_link_polySurface2
+    100006: cockpit:cockpit_cockpit:intercom_polySurface2
+    100008: cockpit:cockpit_cockpit:phoenix_core_engine_polySurface2
+    100010: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface22
+    100012: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface23
+    100014: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface24
+    100016: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface25
+    100018: cockpit:cockpit_cockpit:phoenix_cores_polySurface21_cockpit:polySurface2
+    100020: cockpit:cockpit_cockpit:pipe_set_polySurface2
+    100022: cockpit:cockpit_cockpit:shield_weapon_select_polySurface2
+    100024: cockpit:cockpit_cockpit:singularity_button_cockpit:polySurface2_ult_button
+    100026: cockpit:cockpit_cockpit:singularity_handle_cockpit:polySurface2_ult_lever
+    100028: cockpit:cockpit_cockpit:singulartiy_base_polySurface2
+    100030: cockpit:cockpit_cockpit:weapon_button_1_l_cockpit:polySurface2_weapon_selct_1_l
+    100032: cockpit:cockpit_cockpit:weapon_com_link_polySurface2
+    100034: cockpit:cockpit_cockpit:weapon_select_1_r_cockpit:polySurface2_weapon_selct_1_r
+    100036: cockpit:cockpit_cockpit:weapon_select_2_l_cockpit:polySurface2_weapon_selct_2_l
+    100038: cockpit:cockpit_cockpit:weapon_select_2_r_cockpit:polySurface2_weapon_selct_2_r
+    100040: cockpit:cockpit_cockpit:weapon_select_3_l_cockpit:polySurface2_weapon_selct_3_l
+    100042: cockpit:cockpit_cockpit:weapon_select_3_r_cockpit:polySurface2_weapon_selct_3_r
+    100044: cockpit:cockpit_polySurface2
+    100046: gun_r_gun_l
+    100048: //RootNode
+    100050: polySurface2
+    400000: arm:arm1_arm:polySurface2_arm_r_arm_l
+    400002: cockpit:cockpit_cockpit:cockpit_seat_polySurface2
+    400004: cockpit:cockpit_cockpit:intercom_com_link_polySurface2
+    400006: cockpit:cockpit_cockpit:intercom_polySurface2
+    400008: cockpit:cockpit_cockpit:phoenix_core_engine_polySurface2
+    400010: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface22
+    400012: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface23
+    400014: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface24
+    400016: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface25
+    400018: cockpit:cockpit_cockpit:phoenix_cores_polySurface21_cockpit:polySurface2
+    400020: cockpit:cockpit_cockpit:pipe_set_polySurface2
+    400022: cockpit:cockpit_cockpit:shield_weapon_select_polySurface2
+    400024: cockpit:cockpit_cockpit:singularity_button_cockpit:polySurface2_ult_button
+    400026: cockpit:cockpit_cockpit:singularity_handle_cockpit:polySurface2_ult_lever
+    400028: cockpit:cockpit_cockpit:singulartiy_base_polySurface2
+    400030: cockpit:cockpit_cockpit:weapon_button_1_l_cockpit:polySurface2_weapon_selct_1_l
+    400032: cockpit:cockpit_cockpit:weapon_com_link_polySurface2
+    400034: cockpit:cockpit_cockpit:weapon_select_1_r_cockpit:polySurface2_weapon_selct_1_r
+    400036: cockpit:cockpit_cockpit:weapon_select_2_l_cockpit:polySurface2_weapon_selct_2_l
+    400038: cockpit:cockpit_cockpit:weapon_select_2_r_cockpit:polySurface2_weapon_selct_2_r
+    400040: cockpit:cockpit_cockpit:weapon_select_3_l_cockpit:polySurface2_weapon_selct_3_l
+    400042: cockpit:cockpit_cockpit:weapon_select_3_r_cockpit:polySurface2_weapon_selct_3_r
+    400044: cockpit:cockpit_polySurface2
+    400046: gun_r_gun_l
+    400048: //RootNode
+    400050: polySurface2
+    2300000: arm:arm1_arm:polySurface2_arm_r_arm_l
+    2300002: cockpit:cockpit_cockpit:cockpit_seat_polySurface2
+    2300004: cockpit:cockpit_cockpit:intercom_com_link_polySurface2
+    2300006: cockpit:cockpit_cockpit:intercom_polySurface2
+    2300008: cockpit:cockpit_cockpit:phoenix_core_engine_polySurface2
+    2300010: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface22
+    2300012: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface23
+    2300014: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface24
+    2300016: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface25
+    2300018: cockpit:cockpit_cockpit:phoenix_cores_polySurface21_cockpit:polySurface2
+    2300020: cockpit:cockpit_cockpit:pipe_set_polySurface2
+    2300022: cockpit:cockpit_cockpit:shield_weapon_select_polySurface2
+    2300024: cockpit:cockpit_cockpit:singularity_button_cockpit:polySurface2_ult_button
+    2300026: cockpit:cockpit_cockpit:singularity_handle_cockpit:polySurface2_ult_lever
+    2300028: cockpit:cockpit_cockpit:singulartiy_base_polySurface2
+    2300030: cockpit:cockpit_cockpit:weapon_button_1_l_cockpit:polySurface2_weapon_selct_1_l
+    2300032: cockpit:cockpit_cockpit:weapon_com_link_polySurface2
+    2300034: cockpit:cockpit_cockpit:weapon_select_1_r_cockpit:polySurface2_weapon_selct_1_r
+    2300036: cockpit:cockpit_cockpit:weapon_select_2_l_cockpit:polySurface2_weapon_selct_2_l
+    2300038: cockpit:cockpit_cockpit:weapon_select_2_r_cockpit:polySurface2_weapon_selct_2_r
+    2300040: cockpit:cockpit_cockpit:weapon_select_3_l_cockpit:polySurface2_weapon_selct_3_l
+    2300042: cockpit:cockpit_cockpit:weapon_select_3_r_cockpit:polySurface2_weapon_selct_3_r
+    2300044: cockpit:cockpit_polySurface2
+    2300046: gun_r_gun_l
+    2300048: polySurface2
+    3300000: arm:arm1_arm:polySurface2_arm_r_arm_l
+    3300002: cockpit:cockpit_cockpit:cockpit_seat_polySurface2
+    3300004: cockpit:cockpit_cockpit:intercom_com_link_polySurface2
+    3300006: cockpit:cockpit_cockpit:intercom_polySurface2
+    3300008: cockpit:cockpit_cockpit:phoenix_core_engine_polySurface2
+    3300010: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface22
+    3300012: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface23
+    3300014: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface24
+    3300016: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface25
+    3300018: cockpit:cockpit_cockpit:phoenix_cores_polySurface21_cockpit:polySurface2
+    3300020: cockpit:cockpit_cockpit:pipe_set_polySurface2
+    3300022: cockpit:cockpit_cockpit:shield_weapon_select_polySurface2
+    3300024: cockpit:cockpit_cockpit:singularity_button_cockpit:polySurface2_ult_button
+    3300026: cockpit:cockpit_cockpit:singularity_handle_cockpit:polySurface2_ult_lever
+    3300028: cockpit:cockpit_cockpit:singulartiy_base_polySurface2
+    3300030: cockpit:cockpit_cockpit:weapon_button_1_l_cockpit:polySurface2_weapon_selct_1_l
+    3300032: cockpit:cockpit_cockpit:weapon_com_link_polySurface2
+    3300034: cockpit:cockpit_cockpit:weapon_select_1_r_cockpit:polySurface2_weapon_selct_1_r
+    3300036: cockpit:cockpit_cockpit:weapon_select_2_l_cockpit:polySurface2_weapon_selct_2_l
+    3300038: cockpit:cockpit_cockpit:weapon_select_2_r_cockpit:polySurface2_weapon_selct_2_r
+    3300040: cockpit:cockpit_cockpit:weapon_select_3_l_cockpit:polySurface2_weapon_selct_3_l
+    3300042: cockpit:cockpit_cockpit:weapon_select_3_r_cockpit:polySurface2_weapon_selct_3_r
+    3300044: cockpit:cockpit_polySurface2
+    3300046: gun_r_gun_l
+    3300048: polySurface2
+    4300000: arm:arm1_arm:polySurface2_arm_r_arm_l
+    4300002: cockpit:cockpit_cockpit:cockpit_seat_polySurface2
+    4300004: cockpit:cockpit_cockpit:intercom_com_link_polySurface2
+    4300006: cockpit:cockpit_cockpit:intercom_polySurface2
+    4300008: cockpit:cockpit_cockpit:phoenix_core_engine_polySurface2
+    4300010: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface22
+    4300012: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface23
+    4300014: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface24
+    4300016: cockpit:cockpit_cockpit:phoenix_cores_cockpit:polySurface2_polySurface25
+    4300018: cockpit:cockpit_cockpit:phoenix_cores_polySurface21_cockpit:polySurface2
+    4300020: cockpit:cockpit_cockpit:pipe_set_polySurface2
+    4300022: cockpit:cockpit_cockpit:shield_weapon_select_polySurface2
+    4300024: cockpit:cockpit_cockpit:singularity_button_cockpit:polySurface2_ult_button
+    4300026: cockpit:cockpit_cockpit:singularity_handle_cockpit:polySurface2_ult_lever
+    4300028: cockpit:cockpit_cockpit:singulartiy_base_polySurface2
+    4300030: cockpit:cockpit_cockpit:weapon_button_1_l_cockpit:polySurface2_weapon_selct_1_l
+    4300032: cockpit:cockpit_cockpit:weapon_com_link_polySurface2
+    4300034: cockpit:cockpit_cockpit:weapon_select_1_r_cockpit:polySurface2_weapon_selct_1_r
+    4300036: cockpit:cockpit_cockpit:weapon_select_2_l_cockpit:polySurface2_weapon_selct_2_l
+    4300038: cockpit:cockpit_cockpit:weapon_select_2_r_cockpit:polySurface2_weapon_selct_2_r
+    4300040: cockpit:cockpit_cockpit:weapon_select_3_l_cockpit:polySurface2_weapon_selct_3_l
+    4300042: cockpit:cockpit_cockpit:weapon_select_3_r_cockpit:polySurface2_weapon_selct_3_r
+    4300044: cockpit:cockpit_polySurface2
+    4300046: gun_r_gun_l
+    4300048: polySurface2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.005
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

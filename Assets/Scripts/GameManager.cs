@@ -106,5 +106,13 @@ public class GameManager : MonoBehaviour {
         // if : after start game
     }
 
+    public void AddScore(int addedScore)
+    {
+        
+        game_Score += addedScore;
+        Debug.Log("Player Score" + game_Score);
+    }
+
+
     
 }
