@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 //this will be the enemy class that will spawn other's out of it
 public class MotherShip : MonoBehaviour
 {
     public GameManager GM;
-
+    public spinningSaucer saucerRotation;
+    public endOfRoundLight roundFlashingLight;
 
     #region RoundStuff
+    public Text wavesText;
+    public Text enemyShipsText;
+
     public int m_numOfWaves { private get; set; }
     public int m_currentWave { get; private set; }
-    //ships left till round ends
+    //ships left till round ends, USE DEPLOYED SHIPS FOR END OF WAVE STUFF
     public int m_shipsLeftToDestroy { get;  set; }
     // num of ships to deploy at beginning of round
     public int m_shipsToDeploy; 
@@ -108,12 +113,12 @@ public class MotherShip : MonoBehaviour
         // should automatically go up to wave one at start
         m_currentWave = 0;
 
-        bomberBay = new List<GameObject>(b_stats.spawnCount);
+        bomberBay  = new List<GameObject>(b_stats.spawnCount);
         fighterBay = new List<GameObject>(f_stats.spawnCount);
         captainBay = new List<GameObject>(c_stats.spawnCount);
 
         //default defcon level (not red-alert)
-        defcon = DEFCON.FIVE;
+        defcon     = DEFCON.FIVE;
         prevDefcon = defcon;
 
 
@@ -132,27 +137,33 @@ public class MotherShip : MonoBehaviour
     
     void Update()
     {
+        updateUIText(m_currentWave, m_shipsLeftToDestroy);
 
-        Debug.Log("Left to kill Counter:" + m_shipsLeftToDestroy);
+
+        //Debug.Log("Left to kill Counter:" + m_shipsLeftToDestroy);
         if (prevDefcon != defcon)
             checkDefconLevel();
 
         prevDefcon = defcon;
 
 
-        if (m_shipsLeftToDestroy <= 0)
+        if (deployedShips.Count <= 0)
         {
+            
             GM.endOfWave = true;
         }
 
         if (GM.endOfWave)
         {
             
-            bomberSpawnAmt = (int)((m_shipsToDeploy / 100.0f) * bomberPercent);
+            bomberSpawnAmt  = (int)((m_shipsToDeploy / 100.0f) * bomberPercent);
             fighterSpawnAmt = (int)((m_shipsToDeploy / 100.0f) * fighterPercent);
             captainSpawnAmt = (int)((m_shipsToDeploy / 100.0f) * captainPercent);
 
             GM.EndOfWaveTimer -= Time.deltaTime;
+            saucerRotation.RotateSpeed = Mathf.Lerp(saucerRotation.RotateSpeed, saucerRotation.maxRotateSpeed, Time.deltaTime * 3f);
+            roundFlashingLight.RoundFlash = true;
+
 
             if(GM.EndOfWaveTimer <= 0)
             {
@@ -163,6 +174,20 @@ public class MotherShip : MonoBehaviour
 
             }
         }
+        else
+        {
+            saucerRotation.RotateSpeed = Mathf.Lerp(saucerRotation.RotateSpeed, saucerRotation.minRotateSpeed, Time.deltaTime * 2f); ;
+            roundFlashingLight.RoundFlash = false;
+        }
+
+
+    }
+
+    //the text that the UI will display for curr wave, and enemies left
+    void updateUIText(int l_currWave, int l_enemiesLeft)
+    {
+        wavesText.text = "Wave: " + l_currWave;
+        enemyShipsText.text = "Enemies Left: " + l_enemiesLeft;
 
 
     }
@@ -176,6 +201,7 @@ public class MotherShip : MonoBehaviour
         if (currWave < numOfWaves)
         {
             currWave += 1;
+            m_currentWave += 1;
         }
         else
         {
@@ -347,9 +373,9 @@ public class MotherShip : MonoBehaviour
     void build_bomber(int i, float l_angle, float l_radius)
     {
         GameObject go = Instantiate(b_stats.prefab, b_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
-        go.name = "Bomber_" + i;
-        go.tag = b_stats.Tag;
-        go.layer = 9;
+        go.name       = "Bomber_" + i;
+        go.tag        = b_stats.Tag;
+        go.layer      = 9;
         
         //Rigidbody r =  go.AddComponent<Rigidbody>();
         //BoxCollider b = go.AddComponent<BoxCollider>();
@@ -372,9 +398,9 @@ public class MotherShip : MonoBehaviour
     void build_fighter(int i, float l_angle, float l_radius)
     {
         GameObject go = Instantiate(f_stats.prefab, f_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
-        go.name = "Fighter_" + i;
-        go.layer = 9;
-        go.tag = f_stats.Tag;
+        go.name       = "Fighter_" + i;
+        go.layer      = 9;
+        go.tag        = f_stats.Tag;
         //Rigidbody r = go.AddComponent<Rigidbody>();
         //BoxCollider b = go.AddComponent<BoxCollider>();
         //r.isKinematic = false;
@@ -386,9 +412,9 @@ public class MotherShip : MonoBehaviour
     void build_captain(int i, float l_angle, float l_radius)
     {
         GameObject go = Instantiate(c_stats.prefab, c_stats.spawnPos.transform.position + new Vector3(Mathf.Rad2Deg * Mathf.Cos(i * l_angle), Mathf.Rad2Deg * Mathf.Sin(i * l_angle), 0.0f) * .05f * l_radius, transform.rotation);
-        go.name = "Captain_" + i;
-        go.layer = 9;
-        go.tag = c_stats.Tag;
+        go.name       = "Captain_" + i;
+        go.layer      = 9;
+        go.tag        = c_stats.Tag;
         //Rigidbody r = go.AddComponent<Rigidbody>();
         //BoxCollider b = go.AddComponent<BoxCollider>();
         //r.isKinematic = false;

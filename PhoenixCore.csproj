@@ -135,13 +135,18 @@
     <Compile Include="Assets\Scripts\Enemy_Stuff\FighterPlane.cs" />
     <Compile Include="Assets\Scripts\Enemy_Stuff\MotherShip.cs" />
     <Compile Include="Assets\Scripts\Enemy_Stuff\RoundSystem.cs" />
+    <Compile Include="Assets\Scripts\FlashingLight.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HellFireMissile.cs" />
     <Compile Include="Assets\Scripts\KineticProjectile.cs" />
     <Compile Include="Assets\Scripts\LookAtMouseLocation.cs" />
+    <Compile Include="Assets\Scripts\MiniGun.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
+    <Compile Include="Assets\Scripts\TextScripts\floatTextUp.cs" />
     <Compile Include="Assets\Scripts\Weapons.cs" />
+    <Compile Include="Assets\Scripts\miniGunBullet.cs" />
     <Compile Include="Assets\SearchForPlayer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
@@ -245,8 +250,13 @@
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedObject.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_UpdatePoses.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
+    <Compile Include="Assets\endOfRoundLight.cs" />
+    <Compile Include="Assets\hitPlayer.cs" />
+    <Compile Include="Assets\spinningSaucer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Animation\Enemy\Controllers\ReadMe.txt" />
+    <None Include="Assets\Fonts\pizzadudedotdk.txt" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />

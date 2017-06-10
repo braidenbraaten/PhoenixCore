@@ -6,6 +6,7 @@ using UnityEngine;
 public class BlowUpMissile : StateMachineBehaviour {
     public AudioClip blowUpSound;
     public GameObject explosiveParticles;
+    private GameObject explosiveObject;
     public bool hasHappendOnce = false;
 
     private ParticleSystem missileExhaust;
@@ -22,7 +23,7 @@ public class BlowUpMissile : StateMachineBehaviour {
 
         if (!hasHappendOnce)
         {
-            Instantiate<GameObject>(explosiveParticles, animator.gameObject.transform.position, Quaternion.identity);
+            explosiveObject = Instantiate<GameObject>(explosiveParticles, animator.gameObject.transform.position, Quaternion.identity);
             animator.gameObject.transform.Find("Model").GetComponent<MeshRenderer>().enabled = false;
             missileExhaust = animator.gameObject.transform.Find("ParticleStuff").GetComponent<ParticleSystem>();
             missileExhaust.transform.SetParent(null);
@@ -45,7 +46,12 @@ public class BlowUpMissile : StateMachineBehaviour {
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	    
+
+        //This works for now, may need to change for later
+        Destroy(explosiveObject);
+
+        if(missileExhaust != null)
+        Destroy(missileExhaust.gameObject);
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

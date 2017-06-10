@@ -319,7 +319,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 5.72
+  m_Intensity: 1.07
   m_Range: 2.7967749
   m_SpotAngle: 57.462162
   m_CookieSize: 10
@@ -367,8 +367,11 @@ MonoBehaviour:
   flashingLightScript: {fileID: 0}
   hasCrashed: 0
   shotDown: 0
+  hitPlayer: 0
   turn: 0
   addedForce: {x: 0, y: 0, z: 0}
+  maxSpeed: 0
+  frontOfPlane: {fileID: 0}
   airplaneVoxel: {fileID: 0}
   left: {fileID: 0}
   right: {fileID: 0}

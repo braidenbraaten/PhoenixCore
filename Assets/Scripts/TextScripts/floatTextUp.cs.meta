@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6621e0ad1ac5b6a4e956bed34374651f
+timeCreated: 1497066006
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - textMeshPrefab: {fileID: 102854474789872440, guid: 683d3f00326ca4c42b6cd1476edfa846,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
